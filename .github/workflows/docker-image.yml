@@ -18,7 +18,6 @@ jobs:
 
   build_and_push:
     needs: test
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -34,7 +33,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_HUB_TOKEN }}
-          password: ${{ secrets.DOCKE_RHUB_TOKEN }}
+          password: ${{ secrets.DOCKE_HUB_TOKEN }}
 
       - name: Build and push production image
         uses: docker/build-push-action@v6
