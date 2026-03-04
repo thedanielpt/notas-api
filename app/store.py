@@ -54,5 +54,3 @@ def update(note_id: int, title: str | None = None, content: str | None = None) -
 def delete(note_id: int) -> bool:
     """Elimina una nota. Devuelve True si existía, False si no."""
     return _notes.pop(note_id, None) is not None
-
-a
